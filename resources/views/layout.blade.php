@@ -26,18 +26,18 @@
 <meta name="twitter:image" content="http://www.themezinho.net/digiflex/preview.png">
 
 <!-- FAVICON FILES -->
-<link href="{{asset('ico/apple-touch-icon-144-precomposed.png')}}" rel="apple-touch-icon" sizes="144x144">
-<link href="{{asset('ico/apple-touch-icon-114-precomposed.png')}}" rel="apple-touch-icon" sizes="114x114">
-<link href="{{asset('ico/apple-touch-icon-72-precomposed.png')}}" rel="apple-touch-icon" sizes="72x72">
-<link href="{{asset('ico/apple-touch-icon-57-precomposed.png')}}" rel="apple-touch-icon">
-<link href="{{asset('ico/favicon.png')}}" rel="shortcut icon">
+<link href="{{asset('public/frontend/ico/apple-touch-icon-144-precomposed.png')}}" rel="apple-touch-icon" sizes="144x144">
+<link href="{{asset('public/frontend/ico/apple-touch-icon-114-precomposed.png')}}" rel="apple-touch-icon" sizes="114x114">
+<link href="{{asset('public/frontend/ico/apple-touch-icon-72-precomposed.png')}}" rel="apple-touch-icon" sizes="72x72">
+<link href="{{asset('public/frontend/ico/apple-touch-icon-57-precomposed.png')}}" rel="apple-touch-icon">
+<link href="{{asset('public/frontend/ico/favicon.png')}}" rel="shortcut icon">
 
 <!-- CSS FILES -->
-<link rel="stylesheet" href="{{asset('css/lineicons.css')}}">
-<link rel="stylesheet" href="{{asset('css/fancybox.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/style.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/lineicons.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/fancybox.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/swiper.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
 </head>
 <body>
     <nav class="mobile-menu">
@@ -311,10 +311,10 @@
 </main>
 
 <!-- JS FILES --> 
-<script src="{{asset('js/jquery.min.js')}}"></script> 
-<script src="{{asset('js/bootstrap.min.js')}}"></script> 
-<script src="{{asset('js/swiper.min.js')}}"></script> 
-<script src="{{asset('js/fancybox.min.js')}}"></script> 
-<script src="{{asset('js/scripts.js')}}"></script>
+<script src="{{asset('public/frontend/js/jquery.min.js')}}"></script> 
+<script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script> 
+<script src="{{asset('public/frontend/js/swiper.min.js')}}"></script> 
+<script src="{{asset('public/frontend/js/fancybox.min.js')}}"></script> 
+<script src="{{asset('public/frontend/js/scripts.js')}}"></script>
 </body>
 </html>
