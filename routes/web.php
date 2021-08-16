@@ -13,8 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
+//Route::get('/', function () {
+//    return view('pages.home');
+//});
+
+Route::resource('/','App\Http\Controllers\TrangChuController');
+
+
+
+Route::resource('user','App\Http\Controllers\UserController');
+
+
+Auth::routes();
+
+Route::group(['middleware' => 'check-role'], function() {
+	Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+	Route::resource('management-user','App\Http\Controllers\ManagementUserController');
 });
 
-Route::resource('home','App\Http\Controllers\HomeController');
+
