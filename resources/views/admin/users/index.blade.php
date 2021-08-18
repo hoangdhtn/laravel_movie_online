@@ -18,6 +18,34 @@
             <div class="box-tools">
                 <a href="{{ route('management-user.create') }}" class="btn btn-success btn-lg">Thêm người dùng</a>
             </div>
+            @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{Session::get('success')}}
+                @php
+                Session::forget('success');
+                @endphp
+            </div>
+            @endif
+
+            @if(Session::has('fail'))
+            <div class="alert alert-danger">
+                {{Session::get('fail')}}
+                @php
+                Session::forget('fail');
+                @endphp
+            </div>
+            @endif
+
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <table class="table table-hover">
                 <tr>
                     <th>ID</th>
@@ -32,8 +60,15 @@
                     <td>{{$value->email}}</td>
                     <td>{{$value->id_role}}</td>
                     <td>
-                        <a href="" class="btn btn-primary">Sửa</a>
-                        <a href="" class="btn btn-danger">Xóa</a>
+                        <a href="{{ route('management-user.show',[$value->id]) }}" class="btn btn-primary">Sửa</a>
+
+                    </td>
+                    <td>
+                        <form action="{{route('management-user.destroy', [$value->id])}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <input type="submit" class="btn btn-danger" value="Xóa">
+                        </form>
                     </td>
                 </tr>
 

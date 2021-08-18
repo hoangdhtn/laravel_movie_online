@@ -119,7 +119,7 @@
         <header class="header">
             <a href="index.html" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                AdminLTE
+                Quản lý
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -273,7 +273,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li class="active">
-                            <a href="index.html">
+                            <a href="{{URL::to('/admin')}}">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
                         </li>
@@ -286,7 +286,18 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="{{route('management-user.index')}}"><i class="fa fa-angle-double-right"></i> Danh sách người dùng</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Thêm người dùng</a></li>
+                                <li><a href="{{route('management-user.create')}}"><i class="fa fa-angle-double-right"></i> Thêm người dùng</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="glyphicon glyphicon-book"></i>
+                                <span>Thể loại</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{route('theloai.index')}}"><i class="fa fa-angle-double-right"></i> Danh sách thể loại</a></li>
+                                <li><a href="{{route('theloai.create')}}"><i class="fa fa-angle-double-right"></i> Thêm thể loại</a></li>
                             </ul>
                         </li>
                         

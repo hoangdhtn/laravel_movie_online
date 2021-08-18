@@ -28,7 +28,12 @@ Auth::routes();
 
 Route::group(['middleware' => 'check-role'], function() {
 	Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+	// User
 	Route::resource('management-user','App\Http\Controllers\ManagementUserController');
+	// Thể loại
+	Route::resource('theloai','App\Http\Controllers\TheLoaiController');
+	Route::get('/theloai/kichhoat/{id}', 'App\Http\Controllers\TheLoaiController@kichhoat');
+	Route::get('/theloai/vohieu/{id}', 'App\Http\Controllers\TheLoaiController@vohieu');
 });
 
 

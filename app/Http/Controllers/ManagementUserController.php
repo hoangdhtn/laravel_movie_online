@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Role;
 
 class ManagementUserController extends Controller
 {
@@ -16,7 +18,8 @@ class ManagementUserController extends Controller
     {
         //
         $data = User::all();
-        return view('admin.users')->with(compact('data'));
+        $role = Role::all();
+        return view('admin.users.index')->with(compact('data','role'));
     }
 
     /**
@@ -27,6 +30,8 @@ class ManagementUserController extends Controller
     public function create()
     {
         //
+        $data = Role::all();
+        return view('admin.users.create')->with(compact('data'));
     }
 
     /**
@@ -38,6 +43,24 @@ class ManagementUserController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->validate([
+            'name' => 'required|max:200',
+            'email' => 'required|max:200',
+            'password' => 'required',
+            'role' => 'required',
+        ], [
+            'name.required' => 'Yêu cầu tên người dùng',
+            'email.required' => 'Yêu cầu tên email',
+            'password.required' => 'Yêu cầu mật khẩu',
+        ]);
+
+        User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'id_role' => $data['role'],
+            'password' => Hash::make($data['password']),
+        ]);
+        return back()->with('success', 'Thêm thành công');
     }
 
     /**
@@ -49,6 +72,9 @@ class ManagementUserController extends Controller
     public function show($id)
     {
         //
+        $data = User::find($id);
+        $role = Role::all();
+        return view('admin.users.show')->with(compact('data','role'));
     }
 
     /**
@@ -72,6 +98,24 @@ class ManagementUserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //
+        $data = $request->validate([
+            'name' => 'required|max:200',
+            'email' => 'required|max:200',
+            'role' => '',
+        ], [
+            'name.required' => 'Yêu cầu tên người dùng',
+            'email.required' => 'Yêu cầu tên email',
+        ]);
+
+        //dd($data);
+
+        User::find($id)->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'id_role' => $data['role'],
+        ]);
+        return back()->with('success', 'Cập nhật thành công');
     }
 
     /**
@@ -83,5 +127,7 @@ class ManagementUserController extends Controller
     public function destroy($id)
     {
         //
+        User::find($id)->delete();
+        return back()->with('success', 'Xóa thành công');
     }
 }
