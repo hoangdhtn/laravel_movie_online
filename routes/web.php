@@ -34,6 +34,15 @@ Route::group(['middleware' => 'check-role'], function() {
 	Route::resource('theloai','App\Http\Controllers\TheLoaiController');
 	Route::get('/theloai/kichhoat/{id}', 'App\Http\Controllers\TheLoaiController@kichhoat');
 	Route::get('/theloai/vohieu/{id}', 'App\Http\Controllers\TheLoaiController@vohieu');
+	// Quốc gia
+	Route::resource('quocgia','App\Http\Controllers\QuocGiaController');
+	Route::get('/quocgia/kichhoat/{id}', 'App\Http\Controllers\QuocGiaController@kichhoat');
+	Route::get('/quocgia/vohieu/{id}', 'App\Http\Controllers\QuocGiaController@vohieu');
+	// 
+	Route::resource('phim','App\Http\Controllers\PhimController');
+	Route::get('/phim/kichhoat/{id}', 'App\Http\Controllers\PhimController@kichhoat');
+	Route::get('/phim/vohieu/{id}', 'App\Http\Controllers\PhimController@vohieu');
+
 });
 
 

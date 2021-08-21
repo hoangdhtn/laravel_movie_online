@@ -3,7 +3,7 @@
 @section('content')
 <div class="box box-primary">
     <div class="box-header">
-        <h3 class="box-title">Thêm tài khoản người dùng</h3>
+        <h3 class="box-title">Thêm thể loại</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
     <form role="form" method="POST" action="{{route('theloai.store')}}">

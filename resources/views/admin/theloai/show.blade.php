@@ -3,7 +3,7 @@
 @section('content')
 <div class="box box-primary">
     <div class="box-header">
-        <h3 class="box-title">Sửa tài thể loại</h3>
+        <h3 class="box-title">Sửa tên thể loại</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
     <form role="form" method="POST" action="{{route('theloai.update',[$data->id_theloai])}}">
