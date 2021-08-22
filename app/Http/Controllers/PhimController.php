@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 use App\Models\Phim;
 use App\Models\Theloai;
 use App\Models\Quocgia;
@@ -68,7 +69,7 @@ class PhimController extends Controller
     public function store(Request $request)
     {
         //
-       $data = $request->validate([
+     $data = $request->validate([
         'tenphim' => 'required|max:200',
         'hinhanh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'dienvien' => 'required',
@@ -99,12 +100,12 @@ class PhimController extends Controller
     ]);
 
 
-       if($image = $request->file('hinhanh')){
+     if($image = $request->file('hinhanh')){
         $image = $request->file('hinhanh');
         $input['imagename'] = date('YmdHis') . "." . $image->getClientOriginalExtension();
         $destinationPath = public_path('uploads');
         $image->move($destinationPath, $input['imagename']);
-        }
+    }
 
     $phim = new Phim();
     $phim->ten_phim = $data['tenphim'];
@@ -161,7 +162,65 @@ class PhimController extends Controller
     public function update(Request $request, $id)
     {
         //
+     $data = $request->validate([
+        'tenphim' => 'required|max:200',
+        'hinhanh' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'dienvien' => 'required',
+        'theloai' => 'required',
+        'thoiluong' => 'required',
+        'namsx' => 'required',
+        'rating' => 'required',
+        'quocgia' => 'required',
+        'daodien' => 'required',
+        'linkphim' => 'required',
+        'linktrailer' => 'required',
+        'noidung' => 'required',
+        'status' => 'required',
+    ], [
+        'tenphim.required' => 'Yêu cầu tên',
+        'hinhanh.image' => 'Hình ảnh không hợp lệ',
+        'dienvien.required' => 'Yêu cầu tên diễn viên',
+        'theloai.required' => 'Yêu cầu thể loại',
+        'thoiluong.required' => 'Yêu cầu thời lượng',
+        'namsx.required' => 'Yêu cầu năm sản xuất',
+        'rating.required' => 'Yêu cầu rating',
+        'quocgia.required' => 'Yêu cầu quốc gia',
+        'daodien.required' => 'Yêu cầu tên đạo diễn',
+        'linkphim.required' => 'required',
+        'linktrailer.required' => 'required',
+        'noidung.required' => 'required',
+        'status.required' => 'Yêu cầu tên quyền',
+    ]);
+
+
+     if($image = $request->file('hinhanh')){
+        $image = $request->file('hinhanh');
+        $input['imagename'] = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $destinationPath = public_path('uploads');
+        $image->move($destinationPath, $input['imagename']);
     }
+    else{
+        $input['imagename'] = Phim::find($id)->hinh_phim;
+    }
+
+    $phim = Phim::find($id);
+    $phim->ten_phim = $data['tenphim'];
+    $phim->hinh_phim = $input['imagename'];
+    $phim->dien_vien = $data['dienvien'];
+    $phim->thong_tin = $data['noidung'];
+    $phim->id_theloai = $data['theloai'];
+    $phim->thoi_luong = $data['thoiluong'];
+    $phim->nam_sx = $data['namsx'];
+    $phim->rating = $data['rating'];
+    $phim->id_quocgia = $data['quocgia'];
+    $phim->daodien = $data['daodien'];
+    $phim->link_phim = $data['linkphim'];
+    $phim->link_trailer = $data['linktrailer'];
+    $phim->status = $data['status'];
+    $phim->save();
+
+    return back()->with('success', 'Sửa thành công');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -172,5 +231,10 @@ class PhimController extends Controller
     public function destroy($id)
     {
         //
+        $destinationPath = public_path() ."/uploads/";
+        File::delete($destinationPath . Phim::find($id)->hinh_phim);
+        Phim::find($id)->delete();
+        
+        return back()->with('success', 'Xóa thành công');
     }
 }

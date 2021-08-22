@@ -6,7 +6,8 @@
         <h3 class="box-title">Chỉnh sửa phim</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
-    <form role="form" method="POST" action="{{route('phim.store')}}" enctype="multipart/form-data">
+    <form role="form" method="POST" action="{{route('phim.update', [$data->id_phim])}}" enctype="multipart/form-data">
+        @method('PUT')
         @csrf
         @if(Session::has('success'))
         <div class="alert alert-success">
