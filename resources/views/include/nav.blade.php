@@ -29,12 +29,12 @@
         <!-- end inner -->
     </nav>
     <!-- end mobile-menu -->
-<nav class="navbar">
-  <div class="logo"> <a href="index.html"> <img src="images/logo.png" alt="Image"> </a> </div>
+<nav class="navbar" style="background-color: black;">
+  <div class="logo"> <a href="{{URL::to('/')}}"> <img src="{{asset('public/frontend/images/logo.png')}}" alt="Image"> </a> </div>
   <!-- end logo -->
   <div class="site-menu">
     <ul>
-      <li><a href="index.html">HOME</a></li>
+      <li><a href="{{URL::to('/')}}">HOME</a></li>
       <li><a href="movies.html">MOVIES</a></li>
       <li><a href="tv-shows.html">TV SHOWS</a></li>
       <li><a href="tips.html">TIPS</a></li>
@@ -66,7 +66,7 @@
               @if(Auth::check())
             <div class="navbar-account"> <a href="{{URL::to('/admin')}}">{{Auth::user()->name}} <i class="lni lni-user"></i> </a></div>
           @else
-            <div class="navbar-account"> <a href="{{URL::to('/admin')}}">Đăng nhập <i class="lni lni-user"></i> </a></div>
+            <div class="navbar-account"> <a  href="{{URL::to('/admin')}}">Đăng nhập <i class="lni lni-user"></i> </a></div>
           @endif
     <!-- end navbar-account --> 
   </div>

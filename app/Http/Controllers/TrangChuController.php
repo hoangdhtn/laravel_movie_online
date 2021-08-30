@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Phim;
+use App\Models\Theloai;
 
 class TrangChuController extends Controller
 {
@@ -14,7 +16,15 @@ class TrangChuController extends Controller
     public function index()
     {
         //
-        return view('pages.home');
+        $new_releases = Phim::orderBy('id_phim', 'desc')->limit(3)->get();
+        $theloais = Theloai::all();
+        $phim12s = Phim::orderBy('id_phim', 'desc')->limit(12)->get();
+        //dd($new_releases);
+        return view('pages.home')->with(compact(
+            'new_releases',
+            'theloais',
+            'phim12s',
+        ));
     }
 
     /**
@@ -51,7 +61,7 @@ class TrangChuController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     * 
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

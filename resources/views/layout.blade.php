@@ -38,6 +38,12 @@
 <link rel="stylesheet" href="{{asset('public/frontend/css/swiper.min.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
+
+<style>
+a, h2,h6,blockquote{
+  font-family: 'Roboto', sans-serif;
+}
+</style>
 </head>
 <body>
 
