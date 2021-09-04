@@ -18,10 +18,10 @@
     <!-- end button-account --> 
     <div class="site-menu">
     <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="movies.html">MOVIES</a></li>
-      <li><a href="tv-shows.html">TV SHOWS</a></li>
-      <li><a href="tips.html">TIPS</a></li>
+      <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
+      <li><a href="{{ route('danh-muc-phim.index') }}">Danh mục phim</a></li>
+      {{-- <li><a href="tv-shows.html">TV SHOWS</a></li> --}}
+      <li><a href="tips.html">Liên hệ</a></li>
     </ul>
   </div>
   <!-- end site-menu -->
@@ -34,10 +34,10 @@
   <!-- end logo -->
   <div class="site-menu">
     <ul>
-      <li><a href="{{URL::to('/')}}">HOME</a></li>
-      <li><a href="movies.html">MOVIES</a></li>
-      <li><a href="tv-shows.html">TV SHOWS</a></li>
-      <li><a href="tips.html">TIPS</a></li>
+      <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
+      <li><a href="{{ route('danh-muc-phim.index') }}">Danh mục phim</a></li>
+      {{-- <li><a href="tv-shows.html">TV SHOWS</a></li> --}}
+      <li><a href="tips.html">Liên hệ</a></li>
     </ul>
   </div>
   <!-- end site-menu -->

@@ -44,8 +44,11 @@
 </style>
 
 <style>
-a,input, h2,h6{
+a,h1,h2,h6,blockquote{
   font-family: 'Roboto', sans-serif;
+}
+.active{
+  background-color: #929191;
 }
 </style>
 </head>
@@ -66,13 +69,8 @@ a,input, h2,h6{
   </div>
   <!-- end container --> 
 </section>
-<header class="page-header">
-	<div class="container">
-	<h1>Account</h1>
-	</div>
-	</header>
-<!-- end page-header -->
-<main>
+
+
   @yield('content')
 
 <footer class="footer">

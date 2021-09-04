@@ -17,15 +17,19 @@ use Illuminate\Support\Facades\Route;
 //    return view('pages.home');
 //});
 
-Route::resource('/','App\Http\Controllers\TrangChuController');
+Route::resource('/','App\Http\Controllers\TrangChuPageController');
+Route::resource('danh-muc-phim','App\Http\Controllers\DanhMucPageController');
+
+Route::resource('xem-phim', 'App\Http\Controllers\XemPhimPageController');
 
 
-
+// Người dùng thường
 Route::resource('user','App\Http\Controllers\UserController');
 
 
 Auth::routes();
 
+// Admin
 Route::group(['middleware' => 'check-role'], function() {
 	Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 	// User

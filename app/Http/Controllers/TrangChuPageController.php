@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Phim;
 use App\Models\Theloai;
 
-class TrangChuController extends Controller
+class TrangChuPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class TrangChuController extends Controller
         $theloais = Theloai::all();
         $phim12s = Phim::orderBy('id_phim', 'desc')->limit(12)->get();
         //dd($new_releases);
-        return view('pages.home')->with(compact(
+        return view('pages.trangchu')->with(compact(
             'new_releases',
             'theloais',
             'phim12s',

@@ -76,6 +76,13 @@
 </div> --}}
 
 
+<header class="page-header">
+    <div class="container">
+    <h1>Account</h1>
+    </div>
+    </header>
+<!-- end page-header -->
+<main>
 
 <section class="content-section" data-background="images/section-pattern01.png">
     <div class="container">

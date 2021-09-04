@@ -1170,7 +1170,7 @@ button[type="submit"] i {
 .video-player .back-btn:hover {
   text-decoration: none;
 }
-.video-player video {
+.video-player iframe {
   width: 100%;
   display: block;
 }
@@ -2841,6 +2841,9 @@ main {
 }
 .pagination .page-item {
   display: inline-block;
+}
+.active{
+  background-color: #E9ECEF;
 }
 .pagination .page-item .page-link {
   height: 70px;

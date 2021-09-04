@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="{{asset('public/frontend/css/style.css')}}">
 
 <style>
-a, h2,h6,blockquote{
+a, h2,h6,blockquote, li{
   font-family: 'Roboto', sans-serif;
 }
 </style>
@@ -115,7 +115,12 @@ a, h2,h6,blockquote{
   <!-- end footer --> 
 </main>
 
-<!-- JS FILES --> 
+<!-- JS FILES -->
+<script>
+function goBack() {
+  window.history.back()
+}
+</script> 
 <script src="{{asset('public/frontend/js/jquery.min.js')}}"></script> 
 <script src="{{asset('public/frontend/js/bootstrap.min.js')}}"></script> 
 <script src="{{asset('public/frontend/js/swiper.min.js')}}"></script> 

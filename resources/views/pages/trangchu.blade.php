@@ -93,18 +93,22 @@
                         <circle class="circle-chart__background" stroke="#2f3439" stroke-width="2" fill="none" cx="15" cy="15" r="14"></circle>
                         <circle class="circle-chart__circle" stroke="#4eb04b" stroke-width="2" stroke-dasharray="50,100" cx="15" cy="15" r="14"></circle>
                       </svg>
-                      <b>5.7</b> </div>
+                      <b>{{$phim12->rating}}</b> </div>
                       <!-- end circle-rate -->
                       <div class="hd">1080 <b>HD</b></div>
                       <!-- end hd --> 
                     </figure>
-                    <div class="video-content"> <small class="range">190 min,</small>
+                    <div class="video-content"> <small class="range">{{$phim12->thoi_luong}}</small>
                       <ul class="tags">
-                        <li>Romance</li>
+                        @foreach($theloais as $key => $theloai)
+                          @if($theloai->id_theloai == $phim12->id_theloai)
+                          <li>{{$theloai->ten_theloai}}</li>
+                          @endif
+                        @endforeach
                       </ul>
-                      <div class="age">PG13</div>
+                      {{-- <div class="age">PG13</div> --}}
                       <!-- end age -->
-                      <h3 class="name"><a href="movie-single.html">Black Panther</a></h3>
+                      <h3 class="name"><a href="{{ route('xem-phim.show', $phim12->id_phim) }}">{{$phim12->ten_phim}}</a></h3>
                     </div>
                     <!-- end video-content --> 
                   </div>
@@ -114,7 +118,7 @@
                 <!-- end col-2 -->
 
 
-                <div class="col-12 text-center" > <a href="#"  class="custom-button">Tất cả phim</a> </div>
+                <div class="col-12 text-center" > <a href="{{ route('danh-muc-phim.index') }}"  class="custom-button">Tất cả phim</a> </div>
                 <!-- end col-12 --> 
               </div>
               <!-- end row --> 
