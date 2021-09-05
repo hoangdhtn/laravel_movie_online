@@ -21,7 +21,7 @@
       <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
       <li><a href="{{ route('danh-muc-phim.index') }}">Danh mục phim</a></li>
       {{-- <li><a href="tv-shows.html">TV SHOWS</a></li> --}}
-      <li><a href="tips.html">Liên hệ</a></li>
+      <li><a href="{{ route('lien-he.index') }}">Liên hệ</a></li>
     </ul>
   </div>
   <!-- end site-menu -->
@@ -37,7 +37,7 @@
       <li><a href="{{URL::to('/')}}">Trang chủ</a></li>
       <li><a href="{{ route('danh-muc-phim.index') }}">Danh mục phim</a></li>
       {{-- <li><a href="tv-shows.html">TV SHOWS</a></li> --}}
-      <li><a href="tips.html">Liên hệ</a></li>
+      <li><a href="{{ route('lien-he.index') }}">Liên hệ</a></li>
     </ul>
   </div>
   <!-- end site-menu -->

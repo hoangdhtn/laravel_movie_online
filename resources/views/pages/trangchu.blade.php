@@ -55,7 +55,7 @@
                 <p class="description">
                   {{$new_release->dien_vien}}
                 </p>
-                <a href="movie-single.html" class="play-btn">WATCH TRAILER</a> <a href="{{URL::to('/home')}}" class="add-btn">+</a> </div>
+                <a href="{{route('xem-phim.show', $new_release->id_phim)}}" class="play-btn">XEM NGAY</a> {{-- <a href="{{URL::to('/home')}}" class="add-btn">+</a> --}} </div>
                 <!-- end container --> 
               </div>
               <!-- end slide-inner --> 

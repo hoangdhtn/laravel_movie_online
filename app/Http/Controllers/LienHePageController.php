@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Theloai;
-use App\Models\Phim;
 
-class DanhMucPageController extends Controller
+class LienHePageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class DanhMucPageController extends Controller
     public function index()
     {
         //
-        $theloais = Theloai::all();
-        $phims = Phim::orderBy('id_phim', 'desc')->paginate(12);
-        return view('pages.danhmuc')->with(compact('theloais', 'phims'));
+        return view('pages.lienhe');
     }
 
     /**
@@ -51,10 +47,6 @@ class DanhMucPageController extends Controller
     public function show($id)
     {
         //
-        $phims = Phim::where('id_theloai', $id)->orderBy('id_phim', 'desc')->paginate(12);
-        $theloais = Theloai::all();
-        $title_theloai = Theloai::find($id);
-        return view('pages.danhmucrieng')->with(compact('phims','theloais','title_theloai'));
     }
 
     /**

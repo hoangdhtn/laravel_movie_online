@@ -19,12 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/','App\Http\Controllers\TrangChuPageController');
 Route::resource('danh-muc-phim','App\Http\Controllers\DanhMucPageController');
-
 Route::resource('xem-phim', 'App\Http\Controllers\XemPhimPageController');
-
+Route::resource('lien-he', 'App\Http\Controllers\LienHePageController');
 
 // Người dùng thường
-Route::resource('user','App\Http\Controllers\UserController');
+Route::group(['middleware' => 'check-login'], function() {
+	Route::resource('user','App\Http\Controllers\UserController');
+	Route::get('/user/name/{id}', 'App\Http\Controllers\UserController@showname');
+	Route::post('/user/changename/{id}', 'App\Http\Controllers\UserController@updatename');
+
+	Route::get('/user/pass/{id}', 'App\Http\Controllers\UserController@showpass');
+	Route::post('/user/changepass/{id}', 'App\Http\Controllers\UserController@updatepass');
+});
 
 
 Auth::routes();
@@ -42,7 +48,7 @@ Route::group(['middleware' => 'check-role'], function() {
 	Route::resource('quocgia','App\Http\Controllers\QuocGiaController');
 	Route::get('/quocgia/kichhoat/{id}', 'App\Http\Controllers\QuocGiaController@kichhoat');
 	Route::get('/quocgia/vohieu/{id}', 'App\Http\Controllers\QuocGiaController@vohieu');
-	// 
+	// Phim
 	Route::resource('phim','App\Http\Controllers\PhimController');
 	Route::get('/phim/kichhoat/{id}', 'App\Http\Controllers\PhimController@kichhoat');
 	Route::get('/phim/vohieu/{id}', 'App\Http\Controllers\PhimController@vohieu');

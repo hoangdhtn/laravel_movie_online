@@ -23,7 +23,7 @@
 					</nav>
 					<div class="section-title ">
 						<h6 class="justify-content-center">HOVA Phim</h6>
-						<h2>Phim bạn cần đây</h2>
+						<h2>{{$title_theloai->ten_theloai}}</h2>
 					</div>
 					<!-- end section-title --> 
 				</div>

@@ -145,9 +145,9 @@
                                     <ul class="menu">
                                         <li><!-- start message -->
                                             <a href="#">
-                                                <div class="pull-left">
+                                                {{-- <div class="pull-left">
                                                     <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
-                                                </div>
+                                                </div> --}}
                                                 <h4>
                                                     Support Team
                                                     <small><i class="fa fa-clock-o"></i> 5 mins</small>
