@@ -229,7 +229,7 @@
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Thông tin người dùng</a>
+                                            <a href="{{ route('user.index') }}" class="btn btn-default btn-flat">Thông tin người dùng</a>
                                         </div>
                                         <div class="pull-right">
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

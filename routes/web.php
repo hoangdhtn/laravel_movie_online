@@ -25,11 +25,14 @@ Route::resource('lien-he', 'App\Http\Controllers\LienHePageController');
 // Người dùng thường
 Route::group(['middleware' => 'check-login'], function() {
 	Route::resource('user','App\Http\Controllers\UserController');
+	//Đổi tên
 	Route::get('/user/name/{id}', 'App\Http\Controllers\UserController@showname');
 	Route::post('/user/changename/{id}', 'App\Http\Controllers\UserController@updatename');
-
+	//Đổi mật khẩu
 	Route::get('/user/pass/{id}', 'App\Http\Controllers\UserController@showpass');
 	Route::post('/user/changepass/{id}', 'App\Http\Controllers\UserController@updatepass');
+	//Bình luận
+	Route::post('/user/comment/{id_nguoidung}/{id_phim}', 'App\Http\Controllers\BinhLuanController@postbinhluan');
 });
 
 

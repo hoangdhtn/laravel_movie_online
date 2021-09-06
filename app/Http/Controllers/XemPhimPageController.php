@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Phim;
 use App\Models\Theloai;
+use App\Models\Binhluan;
+use App\Models\User;
 
 class XemPhimPageController extends Controller
 {
@@ -52,10 +54,12 @@ class XemPhimPageController extends Controller
         $phim = Phim::find($id);
         $theloais = Theloai::all();
         $phim6s = Phim::where('id_theloai', $phim->id_theloai)->limit(6)->get();
-
+        $binhluans = Binhluan::where('id_phim', $id)->get();
+        $id_phim = $id;
+        $users = User::all();
         
 
-        return view('pages.xemphim')->with(compact('phim', 'theloais','phim6s'));
+        return view('pages.xemphim')->with(compact('phim', 'theloais','phim6s', 'binhluans', 'users', 'id_phim'));
     }
 
     /**

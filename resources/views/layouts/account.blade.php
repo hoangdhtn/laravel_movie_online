@@ -44,7 +44,7 @@
 </style>
 
 <style>
-a,h1,h2,h6,blockquote{
+a,h1,h2,h6,blockquote,p,h5,input,textarea{
   font-family: 'Roboto', sans-serif;
 }
 .active{

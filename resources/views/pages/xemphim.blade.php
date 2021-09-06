@@ -165,32 +165,50 @@
      <div class="col-12">
        <div class="comments">
         <ul class="comments-list">
-         <li>
-           <div class="comment">
-            <h6>Jenny Klausein</h6>
-            <p>Users like you see an increase in open rates when including recipients’ first and last name in the “To” field to personalize their emails. Gravity letters it amongst herself dearest an windows by. Wooded ladies she basket season age her uneasy saw.</p>
-            <small>November 25, 2020</small>
-            <a href="#">Người dùng</a>
-          </div>
-          <!-- end comment -->
-        </li>
-</ul>
-<div class="comments-form">
- <h5>Leave a Reply</h5>
- <div class="form-group">
-   <textarea placeholder="Comment"></textarea>
+          @foreach($binhluans as $key => $binhluan)
+          <li>
+            <div class="comment">
+              <h6>
+                @foreach($users as $key => $user)
+                @if($user->id == $binhluan->id_user)
+                {{$user->name}}
+                @endif
+                @endforeach
+              </h6>
+              <p>
+                {{$binhluan->noi_dung}}
+              </p>
+              <small>{{$binhluan->created_at}}</small>
+              <a href="#">Người dùng</a>
+            </div>
+          </li>
+          @endforeach
+      </ul>
+      <div class="comments-form">
+       <h5>Rời khỏi với bình luận của bạn</h5>
+       @if(Auth::check())
+          <form method="POST" action="{{ URL::to('/user/comment/'. Auth::id().'/'. $id_phim) }}">
+          @csrf
+         <div class="form-group">
+           <textarea style="color: #111111;" placeholder="Comment" name="noi_dung"></textarea>
+         </div>
+         <!-- end form-group -->
+         <div class="form-group">
+          <input type="submit" value="Gửi">
+         </div>
+       </form>
+       @else
+          <div class="form-group" class="custom-button" >
+            <a href="{{ route('login') }}" >Vui lòng đăng nhập để bình luận!</a>
+         </div>
+       @endif
+       <!-- end form-group -->
+     </div>
+     <!-- end comments-form -->
+   </div>
+   <!-- end comments -->
  </div>
- <!-- end form-group -->
- <div class="form-group">
-   <input type="submit" value="Post Comment">
- </div>
- <!-- end form-group -->
-</div>
-<!-- end comments-form -->
-</div>
-<!-- end comments -->
-</div>
-<!-- end col-12 -->
+ <!-- end col-12 -->
 </div>
 <!-- end row --> 
 </div>
