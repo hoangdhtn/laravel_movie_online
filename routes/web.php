@@ -21,6 +21,7 @@ Route::resource('/','App\Http\Controllers\TrangChuPageController');
 Route::resource('danh-muc-phim','App\Http\Controllers\DanhMucPageController');
 Route::resource('xem-phim', 'App\Http\Controllers\XemPhimPageController');
 Route::resource('lien-he', 'App\Http\Controllers\LienHePageController');
+Route::resource('tim-kiem', 'App\Http\Controllers\TimKiemPageController');
 
 // Người dùng thường
 Route::group(['middleware' => 'check-login'], function() {

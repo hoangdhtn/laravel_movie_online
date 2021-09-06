@@ -1,10 +1,11 @@
-    <nav class="mobile-menu">
+    <nav style="background-color: black;" class="mobile-menu">
         <div class="inner">
         <div class="mobile-search">
-        <h6>Type movie or tv show name to find it</h6>
-    <form>
-      <input type="search" placeholder="Search here">
-      <input type="submit" value="FIND">
+        <h6>Tìm kiếm </h6>
+    <form method="POST" action="{{ route('tim-kiem.store') }}">
+      @csrf
+      <input type="search" name="noi_dung" placeholder="Ghi tại đây">
+      <input type="submit" value="Tìm ngay">
     </form>
         </div>
         <!-- end mobile-search -->
@@ -22,6 +23,7 @@
       <li><a href="{{ route('danh-muc-phim.index') }}">Danh mục phim</a></li>
       {{-- <li><a href="tv-shows.html">TV SHOWS</a></li> --}}
       <li><a href="{{ route('lien-he.index') }}">Liên hệ</a></li>
+      <{{-- li><a href="{{ route('tim-kiem.index') }}"> CCCC</a></li> --}}
     </ul>
   </div>
   <!-- end site-menu -->
@@ -38,6 +40,7 @@
       <li><a href="{{ route('danh-muc-phim.index') }}">Danh mục phim</a></li>
       {{-- <li><a href="tv-shows.html">TV SHOWS</a></li> --}}
       <li><a href="{{ route('lien-he.index') }}">Liên hệ</a></li>
+      {{-- <li><a href="{{ route('tim-kiem.index') }}"> CCCC</a></li> --}}
     </ul>
   </div>
   <!-- end site-menu -->
@@ -83,3 +86,20 @@
       <!-- end hamburger-menu --> 
 </nav>
 <!-- end navbar -->
+
+<section class="search-box">
+  <div class="container">
+    <h6>Tìm kiếm bộ phim của bạn</h6>
+    <form method="POST" action="{{ route('tim-kiem.store') }}">
+      @csrf
+      <input type="search" name="noi_dung" placeholder="Nhập tại đây">
+      <input type="submit" value="Tìm kiếm">
+    </form>
+    <ul>
+      <li><a href="#">Pulp Function</a></li>
+      <li><a href="#">Henry Porter</a></li>
+      <li><a href="#">The Racer</a></li>
+    </ul>
+  </div>
+  <!-- end container --> 
+</section>

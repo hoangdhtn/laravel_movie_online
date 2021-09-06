@@ -1,23 +1,9 @@
 @extends('../layout')
 @section('content')
 
-<section class="search-box">
-  <div class="container">
-    <h6>Type movie or tv show name to find it</h6>
-    <form>
-      <input type="search" placeholder="Search here">
-      <input type="submit" value="FIND">
-    </form>
-    <ul>
-      <li><a href="#">Pulp Function</a></li>
-      <li><a href="#">Henry Porter</a></li>
-      <li><a href="#">The Racer</a></li>
-    </ul>
-  </div>
-  <!-- end container --> 
-</section>
 <header class="slider">
   <div class="main-slider">
+
     <div class="swiper-wrapper">
       @foreach($new_releases as $key => $new_release)
       <div class="swiper-slide">
@@ -152,12 +138,13 @@
             </section>
             <!-- end content-section -->
             <section class="content-section">
-              <div class="video-bg">
+              
+             {{--  <div class="video-bg">
                 <video src="videos/video01.mp4" autoplay muted playsinline loop></video>
-              </div>
+              </div> --}}
               <!-- end video-bg -->
               <div class="container">
-                <div class="row">
+                {{-- <div class="row">
                   <div class="col-12">
                     <div class="section-title text-center light">
                       <h6>START SECURE BROWSING</h6>
@@ -166,9 +153,9 @@
                     <!-- end section-title --> 
                   </div>
                   <!-- end col-12 --> 
-                </div>
+                </div> --}}
                 <!-- end row -->
-                <div class="row">
+                {{-- <div class="row">
                   <div class="col-lg-4">
                     <div class="price-box">
                       <figure class="icon"><img src="public/frontend/images/icon04.png" alt="Image"></figure>
@@ -204,14 +191,14 @@
                     <!-- end price-box --> 
                   </div>
                   <!-- end col-4 --> 
-                </div>
+                </div> --}}
                 <!-- end row --> 
               </div>
               <!-- end container --> 
             </section>
             <!-- end content-section -->
             <section class="content-section no-spacing" data-background="#111111">
-              <div class="container">
+      {{--         <div class="container">
                 <div class="row">
                   <div class="col-12">
                     <div class="get-started-box">
@@ -227,7 +214,7 @@
                   <!-- end col-4 --> 
                 </div>
                 <!-- end row --> 
-              </div>
+              </div> --}}
               <!-- end container --> 
             </section>
 
