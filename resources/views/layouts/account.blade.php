@@ -54,21 +54,6 @@ a,h1,h2,h6,blockquote,p,h5,input,textarea{
 </head>
 <body>
 	@include('include.nav')
-<section class="search-box">
-  <div class="container">
-    <h6>Type movie or tv show name to find it</h6>
-    <form>
-      <input type="search" placeholder="Search here">
-      <input type="submit" value="FIND">
-    </form>
-    <ul>
-      <li><a href="#">Pulp Function</a></li>
-      <li><a href="#">Henry Porter</a></li>
-      <li><a href="#">The Racer</a></li>
-    </ul>
-  </div>
-  <!-- end container --> 
-</section>
 
 
   @yield('content')

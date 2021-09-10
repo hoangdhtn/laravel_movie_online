@@ -7,23 +7,23 @@
 <title>HOVA | Phim Online</title>
 <meta name="author" content="Themezinho">
 <meta name="description" content="For all kind of video streaming website">
-<meta name="keywords" content="digiflex, video, movie, show, tv, watch, online, streaming, stream, ads, trailer, imdb, dram, action, hollywood, cinema, rate">
+<meta name="keywords" content="HOVA, video, movie, show, tv, watch, online, streaming, stream, ads, trailer, imdb, dram, action, hollywood, cinema, rate">
 
 <!-- SOCIAL MEDIA META -->
-<meta property="og:description" content="digiflex | Online Movie Streaming">
-<meta property="og:image" content="http://www.themezinho.net/digiflex/preview.png">
-<meta property="og:site_name" content="digiflex">
-<meta property="og:title" content="digiflex">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://www.themezinho.net/digiflex">
+<meta property="og:description" content="HOVA | Phim Online">
 
+<meta property="og:site_name" content="HOVA | Phim Online">
+<meta property="og:title" content="HOVA | Phim Online">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://it-lms.com/hovaphim/">
+<meta property="og:image" content="{{asset('public/frontend/images/logo-dd.jpg')}}">
 <!-- TWITTER META -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@digiflex">
-<meta name="twitter:creator" content="@digiflex">
-<meta name="twitter:title" content="digiflex">
+<meta name="twitter:site" content="@HOVA">
+<meta name="twitter:creator" content="@HOVA">
+<meta name="twitter:title" content="HOVA | Phim Online">
 <meta name="twitter:description" content="HOVA | Phim Online">
-<meta name="twitter:image" content="http://www.themezinho.net/digiflex/preview.png">
+<meta name="twitter:image" content="{{asset('public/frontend/images/logo-dd.jpg')}}">
 
 <!-- FAVICON FILES -->
 <link href="{{asset('public/frontend/ico/apple-touch-icon-144-precomposed.png')}}" rel="apple-touch-icon" sizes="144x144">
